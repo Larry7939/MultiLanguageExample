@@ -26,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -72,6 +73,7 @@ class MainActivity : ComponentActivity() {
                             }
                         ) {
                             TextField(
+                                modifier = Modifier.menuAnchor(),
                                 readOnly = true,
                                 value = selectedLocale,
                                 onValueChange = { },
@@ -101,9 +103,7 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                         Text(
-                            // getString is a function that will return the
-                            // translated String using the "greeting" key
-                            text = getString(R.string.greeting),
+                            text = stringResource(R.string.greeting),
                             fontSize = 60.sp,
                             modifier = Modifier.padding(top = 30.dp)
                         )
